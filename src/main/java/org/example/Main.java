@@ -9,7 +9,7 @@ public class Main {
         printColor();
         compareNumbers();
         System.out.println(checkSum(5, 7));
-        checkNumPositivity(-1);
+        checkNumPositivity(-7);
         System.out.println(checkNumPositivityBool(12));
         printString("Greetings friend", 5);
         System.out.println(checkLeapYear(2024));
@@ -70,7 +70,7 @@ public class Main {
         else if(value > 0 && value <= 100) {
             System.out.println("Желтый");
         }
-        else if(value > 100) {
+        else {
             System.out.println("Зеленый");
         }
     }
@@ -88,12 +88,14 @@ public class Main {
 
     public static boolean checkSum(int a, int b){
         int c = a + b;
-        if(c >= 10 && c <= 20){
+        /*if(c >= 10 && c <= 20){
             return true;
         }
         else{
             return false;
         }
+        */
+         return c >= 10 && c <= 20;
     }
 
     public static void checkNumPositivity(int a){
@@ -106,13 +108,16 @@ public class Main {
     }
 
     public static boolean checkNumPositivityBool(int a){
-        if(a >= 0){
+        /*if(a >= 0){
             return false;
         }
         else{
             return true;
         }
+         */
+        return a >= 0;
     }
+
     public static void printString(String a, int b){
         for(int i = 0; i < b; i++){
             System.out.println(a);
