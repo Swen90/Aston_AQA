@@ -9,6 +9,7 @@
 
 ||example.org^
 ||avito.ru^
+||twitch.tv^
 0.0.0.0 mail.ru
 TEST111
 TEST222
