@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Endless Google Search
 // @namespace    http://tampermonkey.net/
-// @version      1.1
+// @version      1.0
 // @description  Automatically loads next Google search results when scrolling down.
 // @author       YourName
 // @match        *://www.google.com/search?*
@@ -11,12 +11,11 @@
 (function() {
     'use strict';
 
-    //let loading = false;
+    let loading = false;
 
-
-    //function loadNextPage() {
-        //if (loading) return;
-       // loading = true;
+    function loadNextPage() {
+        if (loading) return;
+        loading = true;
 
         let nextButton = document.querySelector('#pnnext');
         if (!nextButton) return;
