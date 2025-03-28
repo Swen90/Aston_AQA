@@ -13,9 +13,9 @@
 
     //let loading = false;
 
-    function loadNextPage() {
-        if (loading) return;
-        loading = true;
+    //function loadNextPage() {
+        //if (loading) return;
+       // loading = true;
 
         let nextButton = document.querySelector('#pnnext');
         if (!nextButton) return;
