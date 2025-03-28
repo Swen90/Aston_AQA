@@ -1,0 +1,62 @@
+// ==UserScript==
+// @name         Endless Google Search
+// @namespace    http://tampermonkey.net/
+// @version      1.0
+// @description  Automatically loads next Google search results when scrolling down.
+// @author       YourName
+// @match        *://www.google.com/search?*
+// @grant        none
+// ==/UserScript==
+
+(function() {
+    'use strict';
+
+    let loading = false;
+
+    function loadNextPage() {
+        if (loading) return;
+        loading = true;
+
+        let nextButton = document.querySelector('#pnnext');
+        if (!nextButton) return;
+
+        let nextURL = nextButton.href;
+        if (!nextURL) return;
+
+        console.log('Loading more results...');
+
+        fetch(nextURL)
+            .then(response => response.text())
+            .then(html => {
+                let parser = new DOMParser();
+                let doc = parser.parseFromString(html, 'text/html');
+                let newResults = doc.querySelectorAll('.g, .tF2Cxc'); // Google search results
+                let container = document.querySelector('#search');
+
+                newResults.forEach(result => container.appendChild(result));
+
+                let newNextButton = doc.querySelector('#pnnext');
+                if (newNextButton) {
+                    nextButton.href = newNextButton.href;
+                } else {
+                    nextButton.remove();
+                }
+
+                loading = false;
+            })
+            .catch(error => {
+                console.error('Error loading results:', error);
+                loading = false;
+            });
+    }
+
+    window.addEventListener('scroll', () => {
+        let scrollPosition = window.innerHeight + window.scrollY;
+        let pageHeight = document.body.offsetHeight;
+
+        if (scrollPosition >= pageHeight - 500) {
+            loadNextPage();
+        }
+    });
+
+})();
