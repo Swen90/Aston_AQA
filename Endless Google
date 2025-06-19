@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Endless Google Search
 // @namespace    http://tampermonkey.net/
-// @version      1.0
+// @version      1.01
 // @description  Automatically loads next Google search results when scrolling down.
 // @author       YourName
 // @match        *://www.google.com/search?*
