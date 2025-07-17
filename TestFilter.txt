@@ -7,6 +7,7 @@
 ! TimeUpdated: 2025-02-15T07:33:19+00:00
 ! Description: Test filter 1488(15)
 
+||vk.com
 ||example.org^
 ||avito.ru^
 ||twitch.tv^
