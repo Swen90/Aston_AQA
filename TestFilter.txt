@@ -1,11 +1,8 @@
-!
 ! Title: Test filter new15
+! Version: 2.2.222
+! Updated: 2025-02-15T07:33:19+00:00
+! Description: Test filter
 ! Homepage: https://github.com/Swen90/Aston_AQA/blob/master/TestFilter.txt
-! Version: 2.2.22
-! License: free
-! Last modified: 2025-02-15 00:17:12
-! TimeUpdated: 2025-02-15T07:33:19+00:00
-! Description: Test filter 1488(15)
 
 ||vk.com
 ||example.org^
